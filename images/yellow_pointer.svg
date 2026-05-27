@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
   <!-- Yellow Hand Pointer with black outline -->
   <path d="M14 2c-.55 0-1 .45-1 1v12.27l-3.3-2.75c-.75-.62-1.87-.5-2.47.27-.6.77-.48 1.9.27 2.53l6.53 5.44C15.22 25.5 17 27 19.36 27H25c2.2 0 4-1.8 4-4V11c0-1.1-.9-2-2-2h-1V8c0-1.1-.9-2-2-2h-1V5c0-1.1-.9-2-2-2h-3c0-.55-.45-1-1-1z" 
-        fill="#ffff00" stroke="#121212" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+        fill="#FFCC5E" stroke="#121212" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
   <path d="M17 15V9M21 15V8M25 15V10" 
         fill="none" stroke="#121212" stroke-width="2" stroke-linecap="round" />
 </svg>

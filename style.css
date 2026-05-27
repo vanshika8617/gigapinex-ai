@@ -291,6 +291,9 @@ body.custom-cursor-active .pricing-card:hover {
 }
 #custom-cursor.hovering #cursor-pointer {
   display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 16px !important; /* Center the 32px hand pointer inside the 64px wrapper */
 }
 
 /* Button & Link Click Animations */
