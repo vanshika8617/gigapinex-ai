@@ -746,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Build the image tag for the custom pineapple cursor
     const cursorContent = `
-      <img src="images/logo.png" alt="Pineapple Cursor" style="width: 100%; height: 100%; object-fit: contain;">
+      <img src="images/pineapple cursor-Photoroom.png" alt="Pineapple Cursor" style="width: 100%; height: 100%; object-fit: contain;">
     `;
 
     // Create the custom cursor element
