@@ -241,3 +241,32 @@ html.lenis {
   image-rendering: pixelated;
 }
 
+/* Mobile Responsiveness Overrides (< 768px) */
+@media (max-width: 767px) {
+  /* Position BUILD SMARTER behind the laptop and above Center Footer on mobile */
+  .hero-bg-text-container {
+    justify-content: start !important;
+    padding-top: 310px !important;
+  }
+
+  /* Override inline paddings & font sizes for the background text on mobile */
+  .hero-bg-text-1 {
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 14vw !important;
+  }
+  .hero-bg-text-2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 14vw !important;
+  }
+  
+  /* Scale down the base size of portals so they don't cause screen overflow */
+  #aboutPortal,
+  #pricingPortal {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+

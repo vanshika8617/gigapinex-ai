@@ -74,7 +74,7 @@
 
     <!-- Inner Canvas Frame -->
     <div id="mainCanvas"
-      class="w-full h-full rounded-[15px] md:rounded-[15px] bg-cream shadow-2xl overflow-y-auto relative scroll-smooth custom-scrollbar scroll-container">
+      class="w-full h-full rounded-[15px] md:rounded-[15px] bg-cream shadow-2xl overflow-y-auto overflow-x-hidden relative scroll-smooth custom-scrollbar scroll-container">
 
       <!-- Scroll Content Wrapper for Lenis -->
       <div id="scrollContent" class="w-full">
@@ -108,18 +108,18 @@
 
         <!-- Sticky Navigation Header (Starts inline at bottom of landing, then sticks to top of canvas) -->
         <header id="stickyHeader"
-          class="sticky top-0 w-full z-50 bg-transparent border-b border-transparent px-6 py-2 md:px-12 flex items-center justify-between shadow-none transition-all duration-300 opacity-0 pointer-events-none"
+          class="sticky top-0 w-full z-50 bg-transparent border-b border-transparent px-3 py-2 sm:px-6 md:px-12 flex items-center justify-between shadow-none transition-all duration-300 opacity-0 pointer-events-none"
           style="height: 62px;">
           <a href="#landing" class="flex items-center space-x-2 hover:opacity-85 transition-opacity">
-            <img src="images/Group 1.png" alt="GIGAPINEX AI Logo" class="h-10 w-auto transition-all duration-300">
+            <img src="images/Group 1.png" alt="GIGAPINEX AI Logo" class="h-6 sm:h-8 md:h-10 w-auto transition-all duration-300">
           </a>
 
-          <nav class="flex items-center space-x-6 md:space-x-8 text-[18px] font-typewriter">
+          <nav class="flex items-center space-x-2 sm:space-x-4 md:space-x-8 text-[11px] sm:text-[14px] md:text-[18px] font-typewriter">
             <a href="#hero" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">Home</a>
             <a href="#about" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">About</a>
             <a href="#pricing" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">Pricing</a>
             <a href="#contact"
-              class="px-6 py-2.5 bg-[#FFEEDB] rounded-[8px] text-custom-dark hover:bg-[#F3E3D3] transition-all shadow-sm">Contact
+              class="px-2 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 bg-[#FFEEDB] rounded-[6px] md:rounded-[8px] text-custom-dark hover:bg-[#F3E3D3] transition-all shadow-sm whitespace-nowrap">Contact
               Us</a>
           </nav>
         </header>
@@ -129,14 +129,14 @@
           class="scroll-section w-full min-h-[calc(100vh-94px)] md:min-h-[calc(100vh-110px)] flex flex-col justify-between p-6 md:p-12 relative overflow-visible bg-cream z-20">
 
           <!-- Background Pixel Outlined Text -->
-          <div class="absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none z-0">
+          <div class="hero-bg-text-container absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none z-0">
             <div
-              class="font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none"
+              class="hero-bg-text-1 font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none"
               style="color: #121212 !important; text-shadow: none; padding-right: calc(20vw + 100px); padding-bottom: 5px;">
               BUILD
             </div>
             <div
-              class="font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none mt-2"
+              class="hero-bg-text-2 font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none mt-2"
               style="color: #121212 !important; text-shadow: none; padding-left: 20vw; padding-right:50px ;padding-bottom: 250px;">
               SMARTER
             </div>
@@ -149,11 +149,11 @@
             <!-- Left Column -->
             <div class="flex flex-col justify-between text-left space-y-8 md:space-y-0 md:h-full md:pb-4">
               <!-- Top Group (WhatsApp AI Agents) -->
-              <div class="md:mb-auto" style="margin-top: 200px;">
+              <div class="md:mb-auto mt-0 md:mt-[200px]">
                 <p class="font-typewriter text-xs text-[#868B01] uppercase tracking-widest">Get your own</p>
                 <h3
                   class="font-pixel text-olive-green text-3xl md:text-[2.2vw] leading-[1.1] tracking-wider uppercase mt-1">
-                  WHAT'SAPP<br>AI AGENTS
+                  WHAT'SAPP<br class="hidden md:inline">AI AGENTS
                 </h3>
               </div>
               <!-- Bottom Group (Instantly) -->
@@ -229,14 +229,14 @@
           <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-auto z-10 pt-16 pb-8">
             <!-- Text details -->
             <div class="flex flex-col space-y-4 text-left">
-              <h1 class="font-rubik-iso text-[100px] leading-none uppercase tracking-wider text-custom-dark">ABOUT US
+              <h1 class="font-rubik-iso text-5xl md:text-[100px] leading-none uppercase tracking-wider text-custom-dark">ABOUT US
               </h1>
               <div class="mt-4">
                 <h3 class="font-orbit text-olive-green text-lg font-bold tracking-wider">AI, REIMAGINED.</h3>
                 <p class="font-orbit text-[15px] text-[#33302a] leading-relaxed mt-2 max-w-xl">
-                  At GIGAPINEX AI, we build<br>
-                  next-generation intelligent systems<br>
-                  to empower businesses to automate,<br>
+                  At GIGAPINEX AI, we build<br class="hidden md:inline">
+                  next-generation intelligent systems<br class="hidden md:inline">
+                  to empower businesses to automate,<br class="hidden md:inline">
                   analyze, and scale like never before.
                 </p>
               </div>
@@ -350,13 +350,13 @@
             </div>
             <!-- Text details -->
             <div class="flex flex-col space-y-4 items-end text-right">
-              <h1 class="font-rubik-iso text-[100px] leading-none uppercase tracking-wider text-custom-dark">PRICING
+              <h1 class="font-rubik-iso text-5xl md:text-[100px] leading-none uppercase tracking-wider text-custom-dark">PRICING
               </h1>
               <div class="mt-4 flex flex-col items-end">
                 <h3 class="font-orbit text-olive-green text-lg font-bold tracking-wider">POWERFUL AI. FLEXIBLE PLANS.
                 </h3>
                 <p class="font-orbit text-[15px] text-[#33302a] leading-relaxed mt-2 max-w-xl">
-                  Choose the perfect plan to build,<br>
+                  Choose the perfect plan to build,<br class="hidden md:inline">
                   automate, and scale with GIGAPINEX AI.
                 </p>
               </div>
@@ -516,10 +516,10 @@
           </div>
 
           <!-- Footer details -->
-          <div class="w-full flex items-center justify-between border-t border-[#EAE3D8] pt-4 mt-4 z-10">
-            <p class="font-mono-clean text-[10px] text-[#6e685e] tracking-wider">DESIGN STUDIO- KOLKATA</p>
-            <p class="font-pixelify-sans text-[30px] font-normal text-custom-dark tracking-widest">GIGAPINEX AI</p>
-            <p class="font-mono-clean text-[10px] text-olive-green tracking-wider">AI, REIMAGINED.</p>
+          <div class="w-full flex items-center justify-between border-t border-[#EAE3D8] pt-4 mt-4 z-10 gap-2">
+            <p class="font-mono-clean text-[8px] md:text-[10px] text-[#6e685e] tracking-wider whitespace-nowrap">DESIGN STUDIO- KOLKATA</p>
+            <p class="font-pixelify-sans text-lg md:text-[30px] font-normal text-custom-dark tracking-widest whitespace-nowrap">GIGAPINEX AI</p>
+            <p class="font-mono-clean text-[8px] md:text-[10px] text-olive-green tracking-wider whitespace-nowrap">AI, REIMAGINED.</p>
           </div>
         </section>
 
@@ -570,10 +570,10 @@
               <div>
                 <p class="font-orbit text-xs text-[#868B01] uppercase tracking-widest">GET IN TOUCH</p>
                 <h1
-                  class="font-rubik-iso text-custom-dark text-[50px] md:text-[62px] lg:text-[calc(4.8vw+2px)] leading-none uppercase mt-2 mb-4 lg:whitespace-nowrap"
+                  class="font-rubik-iso text-custom-dark text-4xl md:text-[62px] lg:text-[calc(4.8vw+2px)] leading-none uppercase mt-2 mb-4 lg:whitespace-nowrap"
                   style="letter-spacing: 0.05em;">CONTACT US</h1>
                 <p class="font-orbit text-xs text-[#5e584f] leading-relaxed max-w-sm mt-3">
-                  Have a question or a project in mind?<br>We'd love to hear from you.
+                  Have a question or a project in mind?<br class="hidden md:inline">We'd love to hear from you.
                 </p>
               </div>
 
@@ -743,7 +743,7 @@
           <!-- Banner Card -->
           <div
             class="w-full bg-[#E4DECF] border border-[#C0B7A6]/60 rounded-[24px] p-6 md:p-8 z-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm mt-6">
-            <div class="flex items-center space-x-6 w-full md:w-auto">
+            <div class="flex items-center space-x-3 md:space-x-6 w-full md:w-auto">
               <!-- Speech Bubble Container -->
               <div class="flex flex-col items-center justify-center flex-shrink-0 relative">
                 <svg width="64" height="64" viewBox="0 0 16 16" fill="currentColor" class="text-black">
@@ -806,11 +806,11 @@
           <footer
             class="w-full flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[#EAE3D8] pt-6 mt-6 z-10">
             <div class="flex flex-col md:flex-row items-center gap-4 text-xs font-orbit text-[#6e685e]">
-              <p class="uppercase">DESIGN STUDIO- KOLKATA</p>
+              <p class="uppercase text-[10px] md:text-xs">DESIGN STUDIO- KOLKATA</p>
               <span class="hidden md:inline">|</span>
-              <p class="font-pixelify-sans text-[30px] font-normal text-custom-dark tracking-widest">GIGAPINEX AI</p>
+              <p class="font-pixelify-sans text-xl md:text-[30px] font-normal text-custom-dark tracking-widest">GIGAPINEX AI</p>
               <span class="hidden md:inline">|</span>
-              <p class="text-olive-green uppercase">AI, REIMAGINED.</p>
+              <p class="text-olive-green uppercase text-[10px] md:text-xs">AI, REIMAGINED.</p>
             </div>
 
             <!-- Social Icons (Pixel Style Buttons) -->

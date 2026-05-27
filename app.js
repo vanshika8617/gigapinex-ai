@@ -142,7 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Calculate initial offsets
     calculateOffsets();
 
-    // Recalculate offsets on window resize or when scroll triggers refresh
+    // Recalculate offsets on window load, resize or when scroll triggers refresh
+    window.addEventListener('load', calculateOffsets);
     window.addEventListener('resize', calculateOffsets);
     ScrollTrigger.addEventListener('refreshInit', calculateOffsets);
 
