@@ -272,7 +272,7 @@ html.lenis {
   }
 }
 
-/* Custom Cursor Hover Fallback to System Pointer */
+/* Custom Cursor Hover State (Hide Native Cursor, Use Custom) */
 body.custom-cursor-active a:hover,
 body.custom-cursor-active button:hover,
 body.custom-cursor-active select:hover,
@@ -282,7 +282,15 @@ body.custom-cursor-active [role="button"]:hover,
 body.custom-cursor-active .tilt-card:hover,
 body.custom-cursor-active #scrollArrow:hover,
 body.custom-cursor-active .pricing-card:hover {
-  cursor: pointer !important;
+  cursor: none !important;
+}
+
+/* Custom Cursor Hover Image Toggle & Drop Shadow */
+#custom-cursor.hovering #cursor-pineapple {
+  display: none !important;
+}
+#custom-cursor.hovering #cursor-pointer {
+  display: block !important;
 }
 
 /* Button & Link Click Animations */

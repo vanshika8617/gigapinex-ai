@@ -744,9 +744,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Build the image tag for the custom pineapple cursor
+    // Build the image tags for the custom pineapple cursor and pointer cursor
     const cursorContent = `
-      <img src="images/pineapple_cursor.svg" alt="Pineapple Cursor" style="width: 100%; height: 100%; object-fit: contain;">
+      <img id="cursor-pineapple" src="images/pineapple_cursor.svg" alt="Pineapple Cursor" style="width: 100%; height: 100%; object-fit: contain;">
+      <img id="cursor-pointer" src="images/yellow_pointer.svg" alt="Pointer Cursor" style="width: 100%; height: 100%; object-fit: contain; display: none;">
     `;
 
     // Create the custom cursor element
@@ -887,7 +888,7 @@ document.addEventListener('DOMContentLoaded', () => {
           isHoveringComponent = true;
           spawnSparkBurst(3 + Math.floor(Math.random() * 3));
           if (cursorEl) {
-            cursorEl.style.display = 'none';
+            cursorEl.classList.add('hovering');
           }
         }
       }
@@ -900,7 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!relatedTarget) {
           isHoveringComponent = false;
           if (cursorEl) {
-            cursorEl.style.display = 'block';
+            cursorEl.classList.remove('hovering');
           }
         }
       }
