@@ -204,7 +204,7 @@ html.lenis {
   z-index: 999999;
   will-change: transform;
   display: none;
-  filter: drop-shadow(0 0 5px #ffcc00) drop-shadow(0 0 10px #ff9334);
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.4));
   margin-left: -25px;
   margin-top: -25px;
 }
