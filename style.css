@@ -205,6 +205,8 @@ html.lenis {
   will-change: transform;
   display: none;
   filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.85));
+  margin-left: -13px;
+  margin-top: -13px;
 }
 
 /* Hide default cursor only on devices supporting hover and when JS cursor is ready */

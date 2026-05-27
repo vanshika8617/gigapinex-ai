@@ -744,42 +744,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Grid representing the 13x13 pixel art golden pyramid (triangle pointing right)
-    const grid = [
-      "D D . . . . . . . . . . .",
-      "D W D D . . . . . . . . .",
-      "D W W Y D D . . . . . . .",
-      "D W Y Y W W D D . . . . .",
-      "D W Y Y Y Y W W D D . . .",
-      "D W Y Y Y Y Y Y W W D D .",
-      "D W Y Y Y Y Y Y Y Y W W D",
-      "D W Y Y Y Y Y Y S S D D .",
-      "D W Y Y Y Y S S D D . . .",
-      "D W Y Y S S D D . . . . .",
-      "D W S S D D . . . . . . .",
-      "D W D D . . . . . . . . .",
-      "D D . . . . . . . . . . ."
-    ];
-
-    const colors = {
-      'D': '#9a7a06', // Dark Golden-Brown Outline
-      'W': '#ffffff', // Highlight (white-yellow)
-      'Y': '#ffcc00', // Body (vibrant golden yellow)
-      'S': '#d49b00'  // Shadow (medium dark warm yellow)
-    };
-
-    // Build the SVG string for the cursor
-    let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" width="100%" height="100%" style="shape-rendering: crispEdges;">`;
-    for (let y = 0; y < grid.length; y++) {
-      const row = grid[y].split(' ');
-      for (let x = 0; x < row.length; x++) {
-        const char = row[x];
-        if (char !== '.' && colors[char]) {
-          svgContent += `<rect x="${x}" y="${y}" width="1" height="1" fill="${colors[char]}" />`;
-        }
-      }
-    }
-    svgContent += `</svg>`;
+    // Build the SVG string for a yellow ring with a dot inside
+    const svgContent = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+        <!-- Outer Ring -->
+        <circle cx="12" cy="12" r="8" stroke="#ffcc00" stroke-width="2" fill="none" />
+        <!-- Center Dot -->
+        <circle cx="12" cy="12" r="2" fill="#ffcc00" />
+      </svg>
+    `;
 
     // Create the custom cursor element
     const cursorEl = document.createElement('div');
