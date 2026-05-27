@@ -198,15 +198,15 @@ html.lenis {
   position: fixed;
   top: 0;
   left: 0;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   pointer-events: none;
   z-index: 999999;
   will-change: transform;
   display: none;
-  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.85));
-  margin-left: -13px;
-  margin-top: -13px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.35));
+  margin-left: -16px;
+  margin-top: -16px;
 }
 
 /* Hide default cursor only on devices supporting hover and when JS cursor is ready */

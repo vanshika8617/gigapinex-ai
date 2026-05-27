@@ -744,20 +744,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Build the SVG string for a yellow ring with a dot inside
-    const svgContent = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
-        <!-- Outer Ring -->
-        <circle cx="12" cy="12" r="8" stroke="#ffcc00" stroke-width="2" fill="none" />
-        <!-- Center Dot -->
-        <circle cx="12" cy="12" r="2" fill="#ffcc00" />
-      </svg>
+    // Build the image tag for the custom pineapple cursor
+    const cursorContent = `
+      <img src="images/logo.png" alt="Pineapple Cursor" style="width: 100%; height: 100%; object-fit: contain;">
     `;
 
     // Create the custom cursor element
     const cursorEl = document.createElement('div');
     cursorEl.id = 'custom-cursor';
-    cursorEl.innerHTML = svgContent;
+    cursorEl.innerHTML = cursorContent;
     document.body.appendChild(cursorEl);
 
     // Add active class to body to hide native cursor
