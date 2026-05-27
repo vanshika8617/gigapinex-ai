@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Share+Tech+Mono&family=Rubik+Iso&family=Orbit&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400;700&display=swap');
+
+/* Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Courier Prime', Courier, monospace;
+  background-color: #E8E2D9; /* Outer frame border color */
+  overflow: hidden;
+  color: #121212;
+}
+
+p {
+  font-family: 'Orbit', sans-serif !important;
+  font-size: 15px !important;
+}
+
+/* Custom Scrollbar for the inner container */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(134, 139, 1, 0.2);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 139, 1, 0.4);
+}
+
+/* Typography Custom Classes */
+.font-pixel {
+  font-family: 'VT323', monospace;
+}
+
+.font-typewriter {
+  font-family: 'Courier Prime', Courier, monospace;
+}
+
+.font-mono-clean {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.font-rubik-iso {
+  font-family: 'Rubik Iso', system-ui, -apple-system, sans-serif !important;
+}
+
+.font-orbit {
+  font-family: 'Orbit', sans-serif;
+}
+
+.font-open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.font-pixelify-sans {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Pixel Outlined Text */
+.pixel-outline-3d {
+  font-family: 'VT323', monospace;
+  color: #F8F0E9; /* match background for hollow feel, or transparent */
+  -webkit-text-stroke: 3px #121212;
+  text-shadow: 
+    -1px -1px 0 #121212,  
+     1px -1px 0 #121212,
+    -1px  1px 0 #121212,
+     1px  1px 0 #121212;
+}
+
+.pixel-outline-bold {
+  font-family: 'VT323', monospace;
+  color: #F8F0E9;
+  font-weight: 700;
+  -webkit-text-stroke: 4.5px #121212;
+  text-shadow: 
+    -1.5px -1.5px 0 #121212,  
+     1.5px -1.5px 0 #121212,
+    -1.5px  1.5px 0 #121212,
+     1.5px  1.5px 0 #121212;
+}
+
+.pixel-outline-clean {
+  font-family: 'VT323', monospace;
+  color: #F8F0E9;
+  -webkit-text-stroke: 2px #121212;
+  text-shadow: none;
+}
+
+/* Wavy Hand-Drawn Underline */
+.wavy-underline {
+  position: relative;
+}
+
+.wavy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M2,6 Q25,2 50,5 T98,4' stroke='%23FF9334' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.wavy-underline-white::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M2,6 Q25,2 50,5 T98,4' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Custom Gradients */
+.bg-radial-landing {
+  background: radial-gradient(circle at center, #FF9334 0%, #5B3E29 80%);
+}
+
+/* Hover/Tilt transitions for interactive assets */
+.tilt-card {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Pricing Card Hover Effects */
+.pricing-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: #868B01 !important;
+  box-shadow: 0 20px 30px -10px rgba(134, 139, 1, 0.25) !important;
+}
+
+/* Custom CSS for Contact form input fields */
+.contact-input {
+  background-color: rgba(245, 239, 230, 0.5);
+  border: 1px solid #C0B7A6;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif !important;
+  color: #121212;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-input::placeholder {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #868B01;
+  background-color: rgba(245, 239, 230, 0.8);
+}
+
+/* Scroll Snap Disabled */
+
+/* Lenis smooth scrolling helper styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Page Frame Borders */
+.app-frame {
+  border: 24px solid #E8E2D9;
+}
+@media (max-width: 768px) {
+  .app-frame {
+    border: 12px solid #E8E2D9;
+  }
+}
+
+/* Custom Golden Pyramid Cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform;
+  display: none;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.85));
+}
+
+/* Hide default cursor only on devices supporting hover and when JS cursor is ready */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none !important;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active select,
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active iframe,
+  body.custom-cursor-active .tilt-card,
+  body.custom-cursor-active #scrollArrow,
+  body.custom-cursor-active .pricing-card {
+    cursor: none !important;
+  }
+  body.custom-cursor-active #custom-cursor {
+    display: block;
+  }
+}
+
+/* Sparks & Lightning Particles */
+.cursor-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999998;
+  will-change: transform, opacity;
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+}
+

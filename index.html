@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIGAPINEX AI | Automate Everything</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="GIGAPINEX AI builds next-generation intelligent systems for the modern world. Automate, analyze, and scale instantly.">
+  <meta name="keywords" content="AI, Automation, Machine Learning, Design Studio, Kolkata, GIGAPINEX">
+  <meta name="author" content="GIGAPINEX AI">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Share+Tech+Mono&family=Rubik+Iso&family=Orbit&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F8F0E9',
+            'cream-dark': '#F8EEE3',
+            'olive-green': '#868B01',
+            'landing-orange': '#FF9334',
+            'landing-dark': '#5B3E29',
+            'custom-dark': '#121212',
+            'accent-orange': '#FF9334'
+          },
+          fontFamily: {
+            orbit: ['Orbit', 'sans-serif'],
+            'rubik-iso': ['"Rubik Iso"', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            'pixelify-sans': ['"Pixelify Sans"', 'sans-serif'],
+            'open-sans': ['"Open Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP Library & ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll Library -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function () {
+        // Initialize EmailJS. Replace "YOUR_PUBLIC_KEY" with your actual EmailJS Public Key.
+        emailjs.init({
+          publicKey: "wyBTWyidkBrvewDxX",
+        });
+      })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Outer Frame (Desktop view border) -->
+  <div class="fixed inset-0 p-2 md:pl-4 md:pr-4 md:pt-2 md:pb-2 bg-[#D5BEAA] z-0">
+
+    <!-- Inner Canvas Frame -->
+    <div id="mainCanvas"
+      class="w-full h-full rounded-[15px] md:rounded-[15px] bg-cream shadow-2xl overflow-y-auto relative scroll-smooth custom-scrollbar scroll-container">
+
+      <!-- Scroll Content Wrapper for Lenis -->
+      <div id="scrollContent" class="w-full">
+
+        <!-- ================= SECTION 1: LANDING PAGE ================= -->
+        <section id="landing"
+          class="scroll-section w-full min-h-[calc(100vh-32px)] md:min-h-[calc(100vh-48px)] flex flex-col justify-between p-6 md:p-12 relative bg-radial-landing text-white overflow-hidden mb-[-62px]">
+          <div></div> <!-- Spacer -->
+
+          <!-- Center Text -->
+          <div class="text-center my-auto py-12">
+            <h1 class="text-3xl md:text-5xl font-typewriter text-[#121212] font-semibold tracking-wide animate-pulse">
+              Automate Everything..
+            </h1>
+          </div>
+
+          <!-- Scroll Down Indicator (margins positioned to stay exactly 5px above the sticky header) -->
+          <div class="flex flex-col items-center justify-end z-10 relative group" style="margin-bottom: 67px;">
+            <svg id="scrollArrow" class="w-10 h-10 md:w-12 h-12 cursor-default transition-transform duration-300"
+              viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <rect width="512" height="512" rx="64" fill="black" />
+              <path d="M256 370L156 270H226V142H286V270H356L256 370Z" fill="#F8F0E9" />
+            </svg>
+            <!-- Hover text: off-white, 80% opacity, appears below the SVG -->
+            <span
+              class="absolute top-full mt-2 text-[#F8F0E9] opacity-0 group-hover:opacity-80 transition-all duration-300 font-orbit text-[15px] tracking-wider pointer-events-none whitespace-nowrap select-none">
+              Please scroll down
+            </span>
+          </div>
+        </section>
+
+        <!-- Sticky Navigation Header (Starts inline at bottom of landing, then sticks to top of canvas) -->
+        <header id="stickyHeader"
+          class="sticky top-0 w-full z-50 bg-transparent border-b border-transparent px-6 py-2 md:px-12 flex items-center justify-between shadow-none transition-all duration-300 opacity-0 pointer-events-none"
+          style="height: 62px;">
+          <a href="#landing" class="flex items-center space-x-2 hover:opacity-85 transition-opacity">
+            <img src="images/Group 1.png" alt="GIGAPINEX AI Logo" class="h-10 w-auto transition-all duration-300">
+          </a>
+
+          <nav class="flex items-center space-x-6 md:space-x-8 text-[18px] font-typewriter">
+            <a href="#hero" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">Home</a>
+            <a href="#about" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">About</a>
+            <a href="#pricing" class="nav-link text-custom-dark hover:opacity-70 transition-opacity">Pricing</a>
+            <a href="#contact"
+              class="px-6 py-2.5 bg-[#FFEEDB] rounded-[8px] text-custom-dark hover:bg-[#F3E3D3] transition-all shadow-sm">Contact
+              Us</a>
+          </nav>
+        </header>
+
+        <!-- ================= SECTION 2: HERO / FRONT 2 ================= -->
+        <section id="hero"
+          class="scroll-section w-full min-h-[calc(100vh-94px)] md:min-h-[calc(100vh-110px)] flex flex-col justify-between p-6 md:p-12 relative overflow-visible bg-cream z-20">
+
+          <!-- Background Pixel Outlined Text -->
+          <div class="absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none z-0">
+            <div
+              class="font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none"
+              style="color: #121212 !important; text-shadow: none; padding-right: calc(20vw + 100px); padding-bottom: 5px;">
+              BUILD
+            </div>
+            <div
+              class="font-rubik-iso pixel-outline-3d text-[9vw] leading-[0.8] uppercase tracking-[0.05em] text-center select-none mt-2"
+              style="color: #121212 !important; text-shadow: none; padding-left: 20vw; padding-right:50px ;padding-bottom: 250px;">
+              SMARTER
+            </div>
+          </div>
+
+          <!-- Section content -->
+          <div
+            class="w-full z-10 flex-grow grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 md:items-stretch pt-10 pb-4">
+
+            <!-- Left Column -->
+            <div class="flex flex-col justify-between text-left space-y-8 md:space-y-0 md:h-full md:pb-4">
+              <!-- Top Group (WhatsApp AI Agents) -->
+              <div class="md:mb-auto" style="margin-top: 200px;">
+                <p class="font-typewriter text-xs text-[#868B01] uppercase tracking-widest">Get your own</p>
+                <h3
+                  class="font-pixel text-olive-green text-3xl md:text-[2.2vw] leading-[1.1] tracking-wider uppercase mt-1">
+                  WHAT'SAPP<br>AI AGENTS
+                </h3>
+              </div>
+              <!-- Bottom Group (Instantly) -->
+              <div class="md:mt-auto">
+                <p class="font-typewriter text-xs text-[#6e685e] uppercase tracking-wider">Search. Build. Scale.</p>
+                <h2 class="font-typewriter text-[#6e685e] text-3xl md:text-[3.8vw] leading-none font-semibold mt-1">
+                  Instantly
+                </h2>
+              </div>
+            </div>
+
+            <!-- Center Column (Laptop & Footer) -->
+            <div class="flex flex-col justify-between items-center space-y-8 md:space-y-0 md:h-full md:pb-4">
+              <!-- Laptop Component -->
+              <div id="heroLaptopWrapper"
+                class="md:my-auto flex items-center justify-center relative w-full md:w-[160%] md:-mx-[30%] overflow-visible">
+                <div id="laptopScrollContainer" class="w-full flex items-center justify-center"
+                  style="will-change: transform;">
+                  <div
+                    class="tilt-card w-full max-w-[450px] md:max-w-[750px] hover:scale-105 transition-all duration-300 z-10">
+                    <img id="hireUsLaptop" src="images/hero_laptop.png" alt="GIGAPINEX AI Laptop"
+                      class="w-full h-auto drop-shadow-2xl">
+                  </div>
+                </div>
+              </div>
+              <!-- Center Footer (DESIGN STUDIO- KOLKATA) -->
+              <div class="md:mt-auto text-center z-10">
+                <p class="font-mono-clean text-[10px] text-[#6e685e] tracking-widest uppercase">DESIGN STUDIO- KOLKATA
+                </p>
+                <h4
+                  class="font-pixelify-sans text-custom-dark text-[30px] font-normal tracking-widest mt-0.5 uppercase">
+                  GIGAPINEX AI</h4>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div
+              class="flex flex-col justify-between items-start md:items-end text-left md:text-right space-y-8 md:space-y-0 md:h-full md:pb-4">
+              <!-- Top Group (Online Presence) -->
+              <div class="md:mb-auto" style="margin-top: 20px;">
+                <p class="font-typewriter text-xs text-[#6e685e] uppercase tracking-widest">Increase your</p>
+                <h3
+                  class="font-pixel text-olive-green text-3xl md:text-[2.2vw] leading-[1.1] tracking-wider uppercase mt-1">
+                  ONLINE PRESSENCE
+                </h3>
+                <p class="font-typewriter text-olive-green text-xl md:text-[1.5vw] font-bold mt-1">
+                  by 49 %
+                </p>
+              </div>
+              <!-- Middle Group (Get Started Button) -->
+              <div class="md:my-auto md:py-6 w-full md:w-auto flex md:justify-end">
+                <a href="#contact"
+                  class="inline-block bg-black text-white px-8 py-3 rounded-[8px] font-montserrat italic font-black text-sm tracking-wider uppercase shadow-md hover:bg-neutral-800 transition-colors">
+                  GET STARTED
+                </a>
+              </div>
+              <!-- Bottom Group (AI Reimagined Description) -->
+              <div class="md:mt-auto max-w-[280px]">
+                <p class="font-typewriter text-olive-green text-sm font-semibold">AI, Reimagined.</p>
+                <p class="font-typewriter text-[#5e584f] text-xs mt-2 leading-relaxed">
+                  GIGAPINEX AI builds next-generation intelligent systems for the modern world.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ================= SECTION 3: ABOUT US ================= -->
+        <section id="about"
+          class="scroll-section w-full min-h-full flex flex-col justify-between p-6 md:p-12 relative overflow-visible bg-cream border-t border-[#EAE3D8] z-10">
+
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-auto z-10 pt-16 pb-8">
+            <!-- Text details -->
+            <div class="flex flex-col space-y-4 text-left">
+              <h1 class="font-rubik-iso text-[100px] leading-none uppercase tracking-wider text-custom-dark">ABOUT US
+              </h1>
+              <div class="mt-4">
+                <h3 class="font-orbit text-olive-green text-lg font-bold tracking-wider">AI, REIMAGINED.</h3>
+                <p class="font-orbit text-[15px] text-[#33302a] leading-relaxed mt-2 max-w-xl">
+                  At GIGAPINEX AI, we build<br>
+                  next-generation intelligent systems<br>
+                  to empower businesses to automate,<br>
+                  analyze, and scale like never before.
+                </p>
+              </div>
+            </div>
+            <!-- Placeholder for laptop to animate into -->
+            <div class="flex items-center justify-center relative w-full h-[300px] md:h-[400px] mt-8 md:mt-0">
+              <div id="aboutLaptopPlaceholder" class="w-full h-full max-w-[450px] md:max-w-[750px]"></div>
+              <!-- Teleportation Portal -->
+              <div id="aboutPortal" class="absolute rounded-full bg-gradient-to-tr from-black via-violet-950 to-violet-600 opacity-0 scale-0 pointer-events-none z-0"
+                style="width: 320px; height: 320px; filter: blur(3px); box-shadow: 0 0 50px rgba(124, 58, 237, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.9);"></div>
+            </div>
+          </div>
+
+          <!-- Vision/Mission/Values Row -->
+          <div class="w-full z-10 border-t border-[#868B01] pt-6 pb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-stretch">
+
+              <div class="md:border-r border-[#868B01] pr-4">
+                <h4 class="font-orbit text-olive-green text-sm font-bold uppercase tracking-wider">WE BUILD INTELLIGENCE
+                  THAT BUILDS FUTURES.</h4>
+                <p class="font-orbit text-[15px] text-[#6e685e] mt-2 leading-relaxed">Our mission, vision and values
+                  drive
+                  everything we create.</p>
+              </div>
+
+              <!-- Mission -->
+              <div class="flex flex-col items-center text-center space-y-3">
+                <div
+                  class="w-12 h-12 border border-[#C0B7A6] rounded-xl flex items-center justify-center bg-cream-dark/20">
+                  <!-- Flag Icon -->
+                  <svg class="w-5 h-5 text-custom-dark" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                  </svg>
+                </div>
+                <h5 class="font-pixel text-olive-green text-lg tracking-wider">MISSION</h5>
+                <p class="font-orbit text-[15px] text-[#5e584f] leading-relaxed max-w-[220px] text-left">
+                  To empower businesses with intelligent solutions that solve real-world challenges.
+                </p>
+              </div>
+
+              <!-- Vision -->
+              <div class="flex flex-col items-center text-center space-y-3">
+                <div
+                  class="w-12 h-12 border border-[#C0B7A6] rounded-xl flex items-center justify-center bg-cream-dark/20">
+                  <!-- Eye Icon SVG -->
+                  <svg class="w-5 h-5 text-custom-dark" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h5 class="font-pixel text-olive-green text-lg tracking-wider">VISION</h5>
+                <p class="font-orbit text-[15px] text-[#5e584f] leading-relaxed max-w-[220px] text-left">
+                  To be a global leader in AI innovation and transformative technology.
+                </p>
+              </div>
+
+              <!-- Values -->
+              <div class="flex flex-col items-center text-center space-y-3">
+                <div
+                  class="w-12 h-12 border border-[#C0B7A6] rounded-xl flex items-center justify-center bg-cream-dark/20">
+                  <!-- Heart Icon SVG -->
+                  <svg class="w-5 h-5 text-custom-dark" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h5 class="font-pixel text-olive-green text-lg tracking-wider">VALUES</h5>
+                <p class="font-orbit text-[15px] text-[#5e584f] leading-relaxed max-w-[220px] text-left">
+                  Innovation. Integrity. Impact. We build with purpose and people in mind.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Banner Card / Footer Capsule -->
+          <div
+            class="w-full bg-[#E4DECF] rounded-[24px] z-10 grid grid-cols-1 md:grid-cols-4 gap-6 items-center shadow-sm">
+            <div
+              class="border-b md:border-b-0 md:border-r border-[#868B01] py-6 pl-8 pr-4 flex flex-col justify-center items-start text-left">
+              <p class="font-mono-clean text-[10px] text-[#6e685e] tracking-widest uppercase">DESIGN STUDIO- KOLKATA</p>
+              <h4 class="font-pixelify-sans text-custom-dark text-[30px] font-normal tracking-widest mt-0.5 uppercase">
+                GIGAPINEX AI</h4>
+            </div>
+            <div class="md:col-span-3 py-6 pl-8 pr-6 flex flex-col justify-center items-start text-left">
+              <h5 class="font-typewriter text-olive-green text-sm md:text-base font-bold">Building intelligent systems
+                for
+                the modern world.</h5>
+              <p class="font-orbit text-[15px] text-[#5e584f] mt-1">From automation to advanced analytics, we help you
+                stay ahead.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION 4: PRICING ================= -->
+        <section id="pricing"
+          class="scroll-section w-full min-h-full flex flex-col justify-between p-6 md:p-12 relative overflow-visible bg-cream border-t border-[#EAE3D8] z-10">
+
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-auto z-10 pt-16 pb-8">
+            <!-- Placeholder for laptop to emerge into -->
+            <div class="flex items-center justify-center relative w-full h-[300px] md:h-[400px] mt-8 md:mt-0">
+              <div id="pricingLaptopPlaceholder" class="w-full h-full max-w-[450px] md:max-w-[750px]"></div>
+              <!-- Teleportation Portal -->
+              <div id="pricingPortal" class="absolute rounded-full bg-gradient-to-tr from-black via-violet-950 to-violet-600 opacity-0 scale-0 pointer-events-none z-0"
+                style="width: 320px; height: 320px; filter: blur(3px); box-shadow: 0 0 50px rgba(124, 58, 237, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.9);"></div>
+            </div>
+            <!-- Text details -->
+            <div class="flex flex-col space-y-4 items-end text-right">
+              <h1 class="font-rubik-iso text-[100px] leading-none uppercase tracking-wider text-custom-dark">PRICING
+              </h1>
+              <div class="mt-4 flex flex-col items-end">
+                <h3 class="font-orbit text-olive-green text-lg font-bold tracking-wider">POWERFUL AI. FLEXIBLE PLANS.
+                </h3>
+                <p class="font-orbit text-[15px] text-[#33302a] leading-relaxed mt-2 max-w-xl">
+                  Choose the perfect plan to build,<br>
+                  automate, and scale with GIGAPINEX AI.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing Cards -->
+          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 z-10 my-4">
+
+            <!-- STARTER -->
+            <div
+              class="pricing-card bg-cream-dark/40 border border-[#C0B7A6] rounded-[16px] p-6 flex flex-col justify-between shadow-sm">
+              <div>
+                <h4 class="font-orbit text-olive-green text-lg font-bold tracking-widest uppercase">STARTER</h4>
+                <p class="font-orbit text-[#6e685e] text-xs mt-2 leading-relaxed h-10">
+                  For individuals and small teams getting started with AI.
+                </p>
+                <div class="border-t border-[#EAE3D8] my-4 pt-4 flex items-baseline">
+                  <span class="font-rubik-iso text-4xl text-custom-dark">$29</span>
+                  <span class="font-typewriter text-[#6e685e] text-xs ml-1">/mo</span>
+                </div>
+                <p class="font-orbit text-[#6e685e] text-xs uppercase mb-4 tracking-wider">Billed <span
+                    class="font-sans">m</span>onthly</p>
+                <ul class="space-y-2.5 font-orbit text-[#33302a] text-xs">
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Up to 5 AI Agents</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>10,000 API Credits / mo</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Basic Analytics</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Email Support</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact"
+                class="mt-6 w-full text-center bg-black text-white py-2 rounded-[8px] font-montserrat italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-sm">
+                GET STARTED
+              </a>
+            </div>
+
+            <!-- GROWTH (MOST POPULAR) -->
+            <div
+              class="pricing-card bg-[#EAE4D3] border-2 border-olive-green rounded-[16px] p-6 flex flex-col justify-between shadow-md relative">
+              <div
+                class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-olive-green text-white font-orbit text-xs font-bold tracking-widest px-4 py-1 rounded-full uppercase">
+                <span class="font-sans">M</span>OST POPULAR
+              </div>
+              <div>
+                <h4 class="font-orbit text-olive-green text-lg font-bold tracking-widest uppercase mt-2">GROWTH</h4>
+                <p class="font-orbit text-[#6e685e] text-xs mt-2 leading-relaxed h-10">
+                  For growing teams building smarter and faster.
+                </p>
+                <div class="border-t border-[#EAE3D8] my-4 pt-4 flex items-baseline">
+                  <span class="font-rubik-iso text-4xl text-custom-dark">$79</span>
+                  <span class="font-typewriter text-[#6e685e] text-xs ml-1">/mo</span>
+                </div>
+                <p class="font-orbit text-[#6e685e] text-xs uppercase mb-4 tracking-wider">Billed <span
+                    class="font-sans">m</span>onthly</p>
+                <ul class="space-y-2.5 font-orbit text-[#33302a] text-xs">
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Up to 20 AI Agents</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>50,000 API Credits / mo</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Advanced Analytics</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Priority Support</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Custom Integrations</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact"
+                class="mt-6 w-full text-center bg-black text-white py-2.5 rounded-[8px] font-montserrat italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-sm">
+                GET STARTED
+              </a>
+            </div>
+
+            <!-- ENTERPRISE -->
+            <div
+              class="pricing-card bg-cream-dark/40 border border-[#C0B7A6] rounded-[16px] p-6 flex flex-col justify-between shadow-sm">
+              <div>
+                <h4 class="font-orbit text-olive-green text-lg font-bold tracking-widest uppercase">ENTERPRISE</h4>
+                <p class="font-orbit text-[#6e685e] text-xs mt-2 leading-relaxed h-10">
+                  For enterprises with complex needs and high scale.
+                </p>
+                <div class="border-t border-[#EAE3D8] my-4 pt-4 flex items-baseline">
+                  <span class="font-rubik-iso text-4xl text-custom-dark">$249</span>
+                  <span class="font-typewriter text-[#6e685e] text-xs ml-1">/mo</span>
+                </div>
+                <p class="font-orbit text-[#6e685e] text-xs uppercase mb-4 tracking-wider">Billed <span
+                    class="font-sans">m</span>onthly</p>
+                <ul class="space-y-2.5 font-orbit text-[#33302a] text-xs">
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Unlimited AI Agents</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>200,000+ API Credits / mo</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Advanced Analytics</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Dedicated Support</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>Custom Integrations</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <span class="text-olive-green font-bold">&check;</span>
+                    <span>SLA & Security</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact"
+                class="mt-6 w-full text-center bg-black text-white py-2 rounded-[8px] font-montserrat italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-sm">
+                GET STARTED
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Custom Plan Banner -->
+          <div
+            class="w-full bg-[#EAE3D2] rounded-[16px] p-6 z-10 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm mt-4">
+            <div>
+              <h4 class="font-orbit text-custom-dark text-sm font-bold">Need a custom plan?</h4>
+              <p class="font-orbit text-[#5e584f] text-xs mt-1">Let's build the right solution for your unique needs.
+              </p>
+            </div>
+            <button
+              class="book-call-trigger bg-black text-white px-6 py-3 rounded-[8px] font-orbit italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-sm whitespace-nowrap">
+              BOOK A CALL &rarr;
+            </button>
+          </div>
+
+          <!-- Footer details -->
+          <div class="w-full flex items-center justify-between border-t border-[#EAE3D8] pt-4 mt-4 z-10">
+            <p class="font-mono-clean text-[10px] text-[#6e685e] tracking-wider">DESIGN STUDIO- KOLKATA</p>
+            <p class="font-pixelify-sans text-[30px] font-normal text-custom-dark tracking-widest">GIGAPINEX AI</p>
+            <p class="font-mono-clean text-[10px] text-olive-green tracking-wider">AI, REIMAGINED.</p>
+          </div>
+        </section>
+
+        <section id="contact"
+          class="scroll-section w-full min-h-full flex flex-col justify-between p-6 md:p-12 relative overflow-hidden bg-cream border-t border-[#EAE3D8]">
+
+          <!-- Left Margin Pixel Decoration -->
+          <div class="absolute left-4 top-28 opacity-25 pointer-events-none select-none hidden lg:block">
+            <svg width="24" height="120" viewBox="0 0 6 30" fill="currentColor" class="text-olive-green">
+              <rect x="0" y="2" width="2" height="2" />
+              <rect x="0" y="5" width="2" height="2" />
+              <rect x="4" y="4" width="2" height="2" />
+              <rect x="2" y="7" width="2" height="2" />
+              <rect x="0" y="10" width="2" height="2" />
+              <rect x="1" y="13" width="2" height="2" />
+              <rect x="3" y="16" width="2" height="2" />
+              <rect x="1" y="19" width="2" height="2" />
+              <rect x="0" y="22" width="2" height="2" />
+              <rect x="4" y="25" width="2" height="2" />
+            </svg>
+          </div>
+
+          <!-- Right Margin Pixel Grid Decoration -->
+          <div class="absolute right-4 bottom-32 opacity-15 pointer-events-none select-none hidden lg:block">
+            <svg width="120" height="180" viewBox="0 0 10 15" fill="currentColor" class="text-olive-green">
+              <rect x="8" y="0" width="1" height="1" />
+              <rect x="9" y="1" width="1" height="1" />
+              <rect x="7" y="2" width="1" height="1" />
+              <rect x="8" y="3" width="1" height="1" />
+              <rect x="9" y="4" width="1" height="1" />
+              <rect x="6" y="5" width="1" height="1" />
+              <rect x="7" y="6" width="1" height="1" />
+              <rect x="8" y="7" width="1" height="1" />
+              <rect x="9" y="8" width="1" height="1" />
+              <rect x="5" y="9" width="1" height="1" />
+              <rect x="6" y="10" width="1" height="1" />
+              <rect x="7" y="11" width="1" height="1" />
+              <rect x="8" y="12" width="1" height="1" />
+              <rect x="9" y="13" width="1" height="1" />
+              <rect x="4" y="14" width="1" height="1" />
+            </svg>
+          </div>
+
+          <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto z-10 pt-16 pb-8">
+
+            <!-- Left Column Contact Details (6 cols) -->
+            <div class="lg:col-span-6 flex flex-col justify-between h-full space-y-8 pr-0 lg:pr-6">
+              <div>
+                <p class="font-orbit text-xs text-[#868B01] uppercase tracking-widest">GET IN TOUCH</p>
+                <h1
+                  class="font-rubik-iso text-custom-dark text-[50px] md:text-[62px] lg:text-[calc(4.8vw+2px)] leading-none uppercase mt-2 mb-4 lg:whitespace-nowrap"
+                  style="letter-spacing: 0.05em;">CONTACT US</h1>
+                <p class="font-orbit text-xs text-[#5e584f] leading-relaxed max-w-sm mt-3">
+                  Have a question or a project in mind?<br>We'd love to hear from you.
+                </p>
+              </div>
+
+              <div class="space-y-4">
+                <!-- Email Item -->
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 border border-[#868B01] rounded-xl flex items-center justify-center bg-cream text-black shadow-sm flex-shrink-0">
+                    <!-- Mail Icon SVG -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h6 class="font-orbit text-olive-green text-[18px] font-bold tracking-widest uppercase">EMAIL US
+                    </h6>
+                    <p class="font-orbit text-custom-dark text-xs mt-0.5">hello@gigapinex.ai</p>
+                  </div>
+                </div>
+
+                <!-- Dotted Divider -->
+                <div class="border-t border-dotted border-[#C0B7A6] my-2 w-[85%]"></div>
+
+                <!-- Call Item -->
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 border border-[#868B01] rounded-xl flex items-center justify-center bg-cream text-black shadow-sm flex-shrink-0">
+                    <!-- Phone Icon SVG -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h6 class="font-orbit text-olive-green text-[18px] font-bold tracking-widest uppercase">CALL US</h6>
+                    <p class="font-orbit text-custom-dark text-xs mt-0.5">+91 98745 67890</p>
+                  </div>
+                </div>
+
+                <!-- Dotted Divider -->
+                <div class="border-t border-dotted border-[#C0B7A6] my-2 w-[85%]"></div>
+
+                <!-- Visit Item -->
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 border border-[#868B01] rounded-xl flex items-center justify-center bg-cream text-black shadow-sm flex-shrink-0">
+                    <!-- Map Pin Icon SVG -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h6 class="font-orbit text-olive-green text-[18px] font-bold tracking-widest uppercase">VISIT US
+                    </h6>
+                    <p class="font-orbit text-custom-dark text-xs mt-0.5">Design Studio, Kolkata<br>West Bengal, India
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Dotted Divider -->
+                <div class="border-t border-dotted border-[#C0B7A6] my-2 w-[85%]"></div>
+
+                <!-- Working Hours Item -->
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-12 h-12 border border-[#868B01] rounded-xl flex items-center justify-center bg-cream text-black shadow-sm flex-shrink-0">
+                    <!-- Clock Icon SVG -->
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h6 class="font-orbit text-olive-green text-[18px] font-bold tracking-widest uppercase">WORKING
+                      HOURS
+                    </h6>
+                    <p class="font-orbit text-custom-dark text-xs mt-0.5">Mon - Fri : 10:00 AM - 7:00 PM IST</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column Message Form Card (6 cols) -->
+            <div
+              class="lg:col-span-6 bg-[#F5EFE6]/30 border border-[#868B01] rounded-[24px] p-6 md:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden w-full"
+              style="height: calc(100% + 3px); width: calc(100% - 5px);">
+
+              <!-- Scattered Decorative Pixel blocks bottom right -->
+              <div class="absolute bottom-4 right-4 opacity-30 pointer-events-none select-none">
+                <svg width="64" height="64" viewBox="0 0 16 16" fill="currentColor" class="text-olive-green">
+                  <rect x="12" y="12" width="2" height="2" />
+                  <rect x="14" y="10" width="2" height="2" />
+                  <rect x="10" y="14" width="2" height="2" />
+                  <rect x="8" y="12" width="2" height="2" />
+                  <rect x="6" y="14" width="2" height="2" />
+                  <rect x="14" y="14" width="2" height="2" />
+                  <rect x="12" y="8" width="2" height="2" />
+                  <rect x="10" y="10" width="2" height="2" />
+                </svg>
+              </div>
+
+              <h4 class="font-orbit text-olive-green text-[18px] font-bold tracking-widest uppercase mb-6">SEND US A
+                MESSAGE</h4>
+
+              <form id="contactForm" class="space-y-5 z-10 flex-grow flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="flex flex-col space-y-1.5">
+                    <label for="name" class="font-orbit text-[16px] text-[#121212] font-semibold">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name"
+                      class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans">
+                  </div>
+                  <div class="flex flex-col space-y-1.5">
+                    <label for="email" class="font-orbit text-[16px] text-[#121212] font-semibold">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email"
+                      class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans">
+                  </div>
+                  <div class="flex flex-col space-y-1.5 md:col-span-2">
+                    <label for="phone" class="font-orbit text-[16px] text-[#121212] font-semibold">Phone Number</label>
+                    <div class="flex space-x-2">
+                      <select id="countryCode" name="countryCode"
+                        class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-3 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors font-open-sans cursor-pointer">
+                        <option value="+91" selected>🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+86">🇨🇳 +86</option>
+                      </select>
+                      <input type="tel" id="phone" name="phone" required placeholder="10-digit number" pattern="[0-9]{10}"
+                        maxlength="10" title="Please enter a 10-digit phone number"
+                        class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col space-y-1.5 mt-2">
+                  <label for="subject" class="font-orbit text-[16px] text-[#121212] font-semibold">Subject</label>
+                  <input type="text" id="subject" name="subject" required placeholder="What is this regarding?"
+                    class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans">
+                </div>
+
+                <div class="flex flex-col space-y-1.5 mt-2">
+                  <label for="message" class="font-orbit text-[16px] text-[#121212] font-semibold">Message</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or query..."
+                    class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-3 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans resize-none"></textarea>
+                </div>
+
+                <div class="flex justify-start">
+                  <button type="submit"
+                    class="mt-4 flex items-center justify-center space-x-2 bg-black text-white px-6 py-3 rounded-[8px] font-montserrat italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-md w-auto">
+                    <span>SEND MESSAGE</span>
+                    <span>&rarr;</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+          <!-- Banner Card -->
+          <div
+            class="w-full bg-[#E4DECF] border border-[#C0B7A6]/60 rounded-[24px] p-6 md:p-8 z-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm mt-6">
+            <div class="flex items-center space-x-6 w-full md:w-auto">
+              <!-- Speech Bubble Container -->
+              <div class="flex flex-col items-center justify-center flex-shrink-0 relative">
+                <svg width="64" height="64" viewBox="0 0 16 16" fill="currentColor" class="text-black">
+                  <!-- Pixel Speech Bubble -->
+                  <rect x="3" y="1" width="10" height="1" />
+                  <rect x="2" y="2" width="1" height="1" />
+                  <rect x="1" y="3" width="1" height="7" />
+                  <rect x="13" y="2" width="1" height="1" />
+                  <rect x="14" y="3" width="1" height="7" />
+                  <rect x="2" y="10" width="1" height="1" />
+                  <rect x="13" y="10" width="1" height="1" />
+                  <rect x="3" y="11" width="10" height="1" />
+                  <!-- Tail outline -->
+                  <rect x="3" y="12" width="1" height="1" />
+                  <rect x="2" y="13" width="1" height="2" />
+                  <rect x="3" y="15" width="2" height="1" />
+                  <rect x="5" y="12" width="1" height="3" />
+                  <!-- Fill -->
+                  <rect x="3" y="2" width="10" height="9" fill="#F8F0E9" />
+                  <rect x="2" y="3" width="12" height="7" fill="#F8F0E9" />
+                  <rect x="3" y="13" width="2" height="2" fill="#F8F0E9" />
+                  <!-- Dots -->
+                  <rect x="4" y="6" width="2" height="2" />
+                  <rect x="7" y="6" width="2" height="2" />
+                  <rect x="10" y="6" width="2" height="2" />
+                </svg>
+                <!-- Accent below speech bubble (zig-zag stairs in olive green) -->
+                <svg width="32" height="16" viewBox="0 0 8 4" fill="currentColor"
+                  class="text-olive-green mt-1 select-none pointer-events-none">
+                  <rect x="0" y="1" width="1" height="1" />
+                  <rect x="1" y="2" width="1" height="1" />
+                  <rect x="2" y="1" width="1" height="1" />
+                  <rect x="3" y="0" width="1" height="1" />
+                  <rect x="4" y="1" width="1" height="1" />
+                  <rect x="5" y="2" width="1" height="1" />
+                  <rect x="6" y="1" width="1" height="1" />
+                </svg>
+              </div>
+
+              <!-- Vertical Divider -->
+              <div class="hidden md:block h-12 w-[1px] bg-[#C0B7A6]/60"></div>
+
+              <!-- Text -->
+              <div class="text-left">
+                <h4 class="font-orbit text-olive-green text-sm md:text-base font-bold uppercase tracking-wider">LET'S
+                  BUILD THE FUTURE, TOGETHER.</h4>
+                <p class="font-orbit text-[#5e584f] text-xs mt-1.5 leading-relaxed max-w-xl">
+                  Whether you're exploring ideas or ready to build, our team is here to help you take the next step.
+                </p>
+              </div>
+            </div>
+
+            <button id="bookCallBtn"
+              class="book-call-trigger bg-black text-white px-6 py-3 rounded-[8px] font-orbit italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-sm whitespace-nowrap md:ml-4">
+              BOOK A CALL &rarr;
+            </button>
+          </div>
+
+          <!-- Footer -->
+          <footer
+            class="w-full flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[#EAE3D8] pt-6 mt-6 z-10">
+            <div class="flex flex-col md:flex-row items-center gap-4 text-xs font-orbit text-[#6e685e]">
+              <p class="uppercase">DESIGN STUDIO- KOLKATA</p>
+              <span class="hidden md:inline">|</span>
+              <p class="font-pixelify-sans text-[30px] font-normal text-custom-dark tracking-widest">GIGAPINEX AI</p>
+              <span class="hidden md:inline">|</span>
+              <p class="text-olive-green uppercase">AI, REIMAGINED.</p>
+            </div>
+
+            <!-- Social Icons (Pixel Style Buttons) -->
+            <div class="flex items-center space-x-3">
+              <a href="https://linkedin.com" target="_blank"
+                class="w-8 h-8 border border-[#C0B7A6] rounded-[8px] flex items-center justify-center bg-cream hover:bg-[#F2E7DB] text-custom-dark transition-colors font-orbit font-bold text-xs">in</a>
+              <a href="https://x.com" target="_blank"
+                class="w-8 h-8 border border-[#C0B7A6] rounded-[8px] flex items-center justify-center bg-cream hover:bg-[#F2E7DB] text-custom-dark transition-colors font-orbit font-bold text-sm">X</a>
+              <a href="https://github.com" target="_blank"
+                class="w-8 h-8 border border-[#C0B7A6] rounded-[8px] flex items-center justify-center bg-cream hover:bg-[#F2E7DB] text-custom-dark transition-colors font-orbit font-bold text-md">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </footer>
+        </section>
+
+      </div><!-- End scrollContent -->
+
+    </div>
+  </div>
+
+  <!-- Book a Call Modal Overlay -->
+  <div id="callModal"
+    class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-cream border-2 border-olive-green rounded-[8px] p-6 md:p-8 max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col justify-between">
+      <!-- Close Button -->
+      <button id="closeModalBtn"
+        class="absolute top-4 right-4 text-custom-dark hover:text-neutral-600 font-orbit font-bold text-lg select-none focus:outline-none">
+        &times;
+      </button>
+
+      <!-- Modal Content Body -->
+      <div id="modalMainContent" class="space-y-4 text-left">
+        <h4 class="font-orbit text-olive-green text-lg font-bold uppercase tracking-wider">Book a Call</h4>
+        <p class="font-orbit text-[#5e584f] text-xs leading-relaxed">
+          Enter your phone number (with country code) below to confirm your request.
+        </p>
+
+        <div class="flex flex-col space-y-1.5 pt-2">
+          <label for="modalPhone" class="font-orbit text-[16px] text-[#121212] font-semibold">Phone Number</label>
+          <div class="flex space-x-2">
+            <select id="modalCountryCode"
+              class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-3 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors font-open-sans cursor-pointer">
+              <option value="+91" selected>🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+86">🇨🇳 +86</option>
+            </select>
+            <input type="tel" id="modalPhone" required placeholder="10-digit number" pattern="[0-9]{10}" maxlength="10"
+              title="Please enter a 10-digit phone number"
+              class="contact-input bg-[#F5EFE6]/50 border border-[#C0B7A6] rounded-[8px] px-4 py-2.5 text-xs focus:outline-none focus:border-[#868B01] transition-colors w-full font-open-sans">
+          </div>
+        </div>
+
+        <button id="modalSubmitBtn"
+          class="w-full mt-4 flex items-center justify-center space-x-2 bg-black text-white py-3 rounded-[8px] font-orbit italic font-black text-xs tracking-wider uppercase hover:bg-neutral-800 transition-colors shadow-md">
+          <span>CONFIRM & CONNECT &rarr;</span>
+        </button>
+      </div>
+
+      <!-- Success Content (hidden initially) -->
+      <div id="modalSuccessContent"
+        class="hidden flex flex-col items-center justify-center text-center py-6 space-y-4 font-orbit">
+        <div
+          class="w-16 h-16 bg-olive-green/10 border border-olive-green rounded-full flex items-center justify-center text-olive-green animate-bounce">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h5 class="text-olive-green text-lg font-bold uppercase tracking-wider">Request Confirmed!</h5>
+        <p class="text-custom-dark text-sm max-w-xs leading-relaxed">
+          Thank you! You will get a call within 1 hour.
+        </p>
+        <p class="text-[#868B01] text-xs animate-pulse">
+          Opening WhatsApp...
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript file -->
+  <script src="app.js"></script>
+</body>
+
+</html>
