@@ -270,3 +270,27 @@ html.lenis {
   }
 }
 
+/* Custom Cursor Hover Fallback to System Pointer */
+body.custom-cursor-active a:hover,
+body.custom-cursor-active button:hover,
+body.custom-cursor-active select:hover,
+body.custom-cursor-active input:hover,
+body.custom-cursor-active textarea:hover,
+body.custom-cursor-active [role="button"]:hover,
+body.custom-cursor-active .tilt-card:hover,
+body.custom-cursor-active #scrollArrow:hover,
+body.custom-cursor-active .pricing-card:hover {
+  cursor: pointer !important;
+}
+
+/* Button & Link Click Animations */
+button:active,
+a:active,
+.book-call-trigger:active,
+.pricing-card:active,
+#scrollArrow:active,
+.tilt-card:active {
+  transform: scale(0.97) translateY(1.5px) !important;
+  transition: transform 0.05s ease-out !important;
+}
+

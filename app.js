@@ -918,6 +918,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isHoveringComponent) {
           isHoveringComponent = true;
           spawnSparkBurst(3 + Math.floor(Math.random() * 3));
+          if (cursorEl) {
+            cursorEl.style.display = 'none';
+          }
         }
       }
     });
@@ -928,6 +931,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const relatedTarget = e.relatedTarget ? e.relatedTarget.closest(interactiveSelectors) : null;
         if (!relatedTarget) {
           isHoveringComponent = false;
+          if (cursorEl) {
+            cursorEl.style.display = 'block';
+          }
         }
       }
     });
